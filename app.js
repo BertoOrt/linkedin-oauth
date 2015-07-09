@@ -27,7 +27,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(session({ keys: [process.env.SESSION_KEY1, process.env.SESSION_KEY2] }))
+
 app.use(passport.initialize());
 app.use(passport.session());
 
